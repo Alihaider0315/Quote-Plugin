@@ -1,4 +1,4 @@
-// Function to fetch and display a random quote
+// Function to fetch and display a random quote via AJAX
 function displayRandomQuote() {
     jQuery.ajax({
         type: 'GET',
