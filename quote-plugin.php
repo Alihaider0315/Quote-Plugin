@@ -3,7 +3,7 @@
 Plugin Name: Quote Plugin
 Description: Allows users to add and display random quotes.
 Version: 1.0
-Author: Magnus Communication
+Author: Ali Haider
 */
 
 // Enqueue CSS and JavaScript
@@ -70,21 +70,6 @@ function quote_plugin_shortcode() {
     return ob_get_clean();
 }
 add_shortcode('quote-plugin', 'quote_plugin_shortcode');
-
-// Schedule event to change quote every 2 days
-function schedule_quote_change_event() {
-    if (!wp_next_scheduled('change_quote_event')) {
-        wp_schedule_event(time(), 'twodays', 'change_quote_event');
-    }
-}
-add_action('init', 'schedule_quote_change_event');
-
-// Hook to change the quote
-function change_quote_callback() {
-    // Update the quote display
-    display_random_quote();
-}
-add_action('change_quote_event', 'change_quote_callback');
 
 // Function to fetch and return a random quote via AJAX
 function get_random_quote() {

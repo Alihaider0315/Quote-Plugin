@@ -13,8 +13,8 @@ function displayRandomQuote() {
     });
 }
 
-// Function to refresh the quote every 2 days (in milliseconds)
-function refreshQuote() {
+// Function to change the quote after 2 days
+function changeQuoteAfterTwoDays() {
     setInterval(function () {
         displayRandomQuote();
     }, 2 * 24 * 60 * 60 * 1000);
@@ -28,6 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Display the initial quote
     displayRandomQuote();
 
-    // Start the timer to refresh the quote
-    refreshQuote();
+    // Start the timer to change the quote after 2 days
+    changeQuoteAfterTwoDays();
 });
